@@ -10,6 +10,8 @@ For Carla Documentation, go here: https://carla.readthedocs.io/en/latest/
 Then you will need to create a new conda environment, just simply create one by typing this:
     conda create --name louiscarla
 
+Make sure your Python version is 3.8.0 inside the new conda environment you created!
+
 To run Carla on Windows environment, just simply type this into the command:
 
     conda activate louiscarla
