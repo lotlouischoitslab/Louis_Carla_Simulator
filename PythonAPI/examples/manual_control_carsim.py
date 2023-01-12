@@ -1091,7 +1091,6 @@ def game_loop(args):
 
     try:
         client = carla.Client(args.host, args.port) #use this for local computer
-        # client = carla.Client('192.17.178.196', 2000) use this to connect to other computer
         
         client.set_timeout(2.0)
 
