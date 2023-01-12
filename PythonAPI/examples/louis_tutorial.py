@@ -1090,7 +1090,8 @@ def game_loop(args):
     world = None
 
     try:
-        client = carla.Client(args.host, args.port)
+        client = carla.Client(args.host, args.port) #use this for local computer
+        
         client.set_timeout(2.0)
 
         display = pygame.display.set_mode(
