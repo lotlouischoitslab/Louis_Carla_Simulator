@@ -13,6 +13,8 @@ Then you will need to create a new conda environment, just simply create one by 
 
 Make sure your Python version is 3.8.0 inside the new conda environment you created!
 
+    conda install -c anaconda python=3.8
+
 To run Carla on Windows environment, just simply type this into the command:
 
     conda activate louiscarla
