@@ -1,3 +1,0 @@
-<launch>
-    <test test-name="RosTestTestrunner" pkg="gstreaming" type="gstreaming_rostest_testrunner" name="GStreamingRosTestTestrunner"/>
-</launch>
