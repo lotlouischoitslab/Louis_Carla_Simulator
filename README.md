@@ -1,7 +1,7 @@
 # Louis Carla Simulator
 
 ## Contributors:
-- ### Louis Sungwoo Cho
+- ### Louis Sungwoo Cho 조성우
 
 ## Documentation:
 
