@@ -5,17 +5,25 @@
 
 ## Documentation:
 
-To run Carla on Ubuntu Docker environment, just simply type this into the command:
+For Carla Documentation, go here: https://carla.readthedocs.io/en/latest/
 
-    conda activate carla
-    
-To manually control the vehicle, run this command in the PythonAPI examples folder:
+Then you will need to create a new conda environment, just simply create one by typing this:
+    conda create --name louiscarla
+
+To run Carla on Windows environment, just simply type this into the command:
+
+    conda activate louiscarla
+
+To run Carla on Linux/Ubuntu environment, just simply type this into the command:
+    sudo conda activate louiscarla
+
+For running examples:
+    cd Carla
+    cd PythonAPI
+    cd examples
     
     python manual_control.py
     
-## Louis' Approach:
-- Run two actors (each representing one vehicle)
-   
 ## References:
 - **[0] [Docker Environment Setup Tutorial](https://www.youtube.com/watch?v=SnSH8Ht3MIc)**
 - **[1] [Carla Simulator Documentation](https://carla.readthedocs.io/en/latest/)**
