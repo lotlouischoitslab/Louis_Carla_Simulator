@@ -1090,6 +1090,7 @@ def game_loop(args):
     world = None
 
     try:
+        #client = carla.Client('192.17.178.196',2000)
         client = carla.Client(args.host, args.port)
         client.set_timeout(2.0)
 

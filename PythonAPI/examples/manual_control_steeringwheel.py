@@ -230,7 +230,7 @@ class DualControl(object):
         self._joystick.init()
 
         self._parser = ConfigParser()
-        self._parser.read('wheel_config.ini')
+        self._parser.read('../wheel_config.ini')
         self._steer_idx = int(
             self._parser.get('G29 Racing Wheel', 'steering_wheel'))
         self._throttle_idx = int(
@@ -775,7 +775,8 @@ def game_loop(args):
     world = None
 
     try:
-        client = carla.Client(args.host, args.port)
+        client = carla.Client('192.17.178.196',2000)
+        #client = carla.Client(args.host, args.port)
         client.set_timeout(2.0)
 
         display = pygame.display.set_mode(

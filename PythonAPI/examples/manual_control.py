@@ -1185,7 +1185,8 @@ def game_loop(args):
     original_settings = None
 
     try:
-        client = carla.Client(args.host, args.port)
+        #client = carla.Client(args.host, args.port)
+        client = carla.Client('192.17.178.196',2000)
         client.set_timeout(20.0)
 
         sim_world = client.get_world()
