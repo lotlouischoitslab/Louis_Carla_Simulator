@@ -107,3 +107,6 @@ class CarEnv:
             done = True 
         
         return self.front_camera, reward, done,None 
+
+class DQAgent:
+    pass 
