@@ -7,6 +7,8 @@
 
 For Carla Documentation, go here: https://carla.readthedocs.io/en/latest/
 
+For Carla Leadership Board, go here: https://leaderboard.carla.org/ 
+
 Then you will need to create a new conda environment, just simply create one by typing this:
     
     conda create --name louiscarla
