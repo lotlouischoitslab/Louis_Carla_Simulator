@@ -217,3 +217,24 @@ class DQAgent:
         if self.target_update_counter > UPDATE_TARGET_EVERY:
             self.target_model.set_weights(self.model.get_weights())
             self.target_update_counter = 0 
+
+        
+    def get_qs(self,state):
+        return self.model.predict(np.array(state).reshape(-1*state.shape)/255)[0]
+
+    def train_in_loop(self):
+        X = np.random.uniform(size=(1,IM_HEIGHT,IM_WIDTH,3)).astype(np.float32)
+        y = np.random.uniform(size=(1,3)).astype(np.float32) 
+
+        with self.graph.as_default():
+            self.model.fit(X,y,verbose=False,batch_size=1) 
+        
+        self.training_initialized = True 
+
+        while True:
+            if self.terminate:
+                return 
+
+            self.train() 
+            time.sleep(0.01)  
+
