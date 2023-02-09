@@ -138,11 +138,11 @@ class CarEnv:
 
 class DQAgent:
     def __init__(self):
-        self.model = self.create_model()
-        self.target_model=  self.create_model()
-        self.target_model.set_weights(self.model.get_weights()) 
+        self.model = self.create_model() #create the deep q-learning agent
+        self.target_model=  self.create_model() #set the target model
+        self.target_model.set_weights(self.model.get_weights()) #set the weights of the model
 
-        self.replay_memory = deque(maxlen=REPLAY_MEMORY_SIZE)
+        self.replay_memory = deque(maxlen=REPLAY_MEMORY_SIZE) #replay the memory
 
         self.tensorboard = ModifiedTensorBoard(log_dir=f'logs/{MODEL_NAME}-{int(time.time())}')
         self.target_update_counter = 0
@@ -155,13 +155,13 @@ class DQAgent:
 
     
     def create_model(self):
-        base_model = Xception(weights=None, include_top=False,input_shape=(IM_HEIGHT,IMG_WIDTH,3))
+        base_model = Xception(weights=None, include_top=False,input_shape=(IM_HEIGHT,IMG_WIDTH,3)) #set the base model
 
         x = base_model.output #base model output
         x = GlobalAveragePooling2D()(x) #average pooling
 
         predictions = Dense(3,activation='linear')(x) #3 options: left, straight, right
-        model = Model(inputs=base_model.input,outputs=predictions) 
+        model = Model(inputs=base_model.input,outputs=predictions) #call the model
         model.compile(loss='mse',optimizer=Adam(lr=0.001),metrics=['accuracy']) #measure the accuracy
         return model #return the model
 
